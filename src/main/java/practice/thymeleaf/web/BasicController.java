@@ -1,6 +1,10 @@
 package practice.thymeleaf.web;
 
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import lombok.Data;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -53,6 +57,22 @@ public class BasicController {
         public User(String name, int age) {
             this.name = name;
             this.age = age;
+        }
+    }
+
+    @GetMapping("/basic-objects")
+    public String basicObjects(Model model, HttpSession session, HttpServletRequest request, HttpServletResponse response) {
+        session.setAttribute("sessionData", "session data!!");
+        model.addAttribute("request", request);
+        model.addAttribute("response", response);
+        model.addAttribute("servletContext", request.getServletContext());
+        return "basic-objects";
+    }
+
+    @Component("bean")
+    static class bean {
+        public String getData(String data) {
+            return "get : " + data;
         }
     }
 }
