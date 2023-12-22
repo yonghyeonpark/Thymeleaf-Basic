@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>리터럴</h1>
+<ul>
+    <!-- <li>"hello world!" = <span th:text="hello world!"></span></li>-->
+    <li>'basic' + ' literal!' = <span th:text="'basic' + ' literal!'"></span></li>
+    <li>'basic literal!' = <span th:text="'basic literal!'"></span></li>
+    <li>'basic ' + ${data} = <span th:text="'basic ' + ${data}"></span></li>
+    <li>리터럴 대체 |basic ${data}| = <span th:text="|basic ${data}|"></span></li>
+</ul>
+</body>
