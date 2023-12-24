@@ -96,7 +96,7 @@ public class BasicController {
         return "literal";
     }
 
-    @GetMapping("/operaion")
+    @GetMapping("/operation")
     public String operation(Model model) {
         model.addAttribute("nullData", null);
         model.addAttribute("data", "data");
