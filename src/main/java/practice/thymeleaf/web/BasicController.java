@@ -102,4 +102,9 @@ public class BasicController {
         model.addAttribute("data", "data");
         return "operation";
     }
+
+    @GetMapping("/attribute")
+    public String attribute() {
+        return "attribute";
+    }
 }
