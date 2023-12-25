@@ -107,4 +107,18 @@ public class BasicController {
     public String attribute() {
         return "attribute";
     }
+
+    @GetMapping("/each")
+    public String each(Model model) {
+        addUsers(model);
+        return "each";
+    }
+
+    private void addUsers(Model model) {
+        List<User> userList = new ArrayList<>();
+        userList.add(new User("A", 1));
+        userList.add(new User("B", 2));
+        userList.add(new User("C", 3));
+        model.addAttribute("users", userList);
+    }
 }
