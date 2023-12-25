@@ -127,4 +127,10 @@ public class BasicController {
         addUsers(model);
         return "/condition";
     }
+
+    @GetMapping("/comments")
+    public String comments(Model model) {
+        model.addAttribute("data", "sample");
+        return "comments";
+    }
 }
