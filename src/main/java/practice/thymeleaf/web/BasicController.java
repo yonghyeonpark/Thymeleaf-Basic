@@ -133,4 +133,10 @@ public class BasicController {
         model.addAttribute("data", "sample");
         return "comments";
     }
+
+    @GetMapping("/block")
+    public String block(Model model) {
+        addUsers(model);
+        return "block";
+    }
 }
